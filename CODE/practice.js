@@ -202,6 +202,56 @@ person = {} // not allowed
 // }
 // console.log(`Total Number are divisiable by 3 & 5 is ${count}`);
 
+//! -------- LOOP KE QUESTIONS SOLVE KRNA HAI BY CHATGPT --------- !//
+
+//! print number from 1 to 100 odd number but break after finding 5.
+
+
+//! FUNCTION :------->------>
+
+//! 1. Write BMI Calculator?
+
+// function bmi(weight, height){
+//     return weight/(height*height);
+// }
+// console.log(bmi(56,1.65).toFixed(2));
+
+
+//! Ques:---> Create a reusable discount calculator (HOF)
+
+// function discountCalculator(discount){
+//     return function(price){
+//         return price - price * (discount/100);
+//     };
+
+// }
+// let discounterTen = discountCalculator(10);
+// let discounterTwenty = discountCalculator(20);
+// console.log("Discount 10% : ",discounterTen(100));
+// console.log("Discount 20% : ",discounterTwenty(1000));
+
+//! Solve clouser Questions by the help of CHatGPTL:-----.
+
+//! Ques:--->  Create a pure function to transform a value.
+
+// function double(val){
+//     return val * 2;
+// }
+// console.log(double(15));
+
+//! Use IIFE to isolate variable :---->
+// IIFE is a private function. , here we create privae or isolated variables.
+
+
+// (function (){
+//     const password = "secret password";
+//     console.log(password);
+// })();
+// console.log(password);
+
+
+//! ARRAYS :-------->
+
 
 
 
