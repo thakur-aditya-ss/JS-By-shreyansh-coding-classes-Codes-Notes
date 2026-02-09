@@ -896,7 +896,7 @@ console.log(fi);
 //! some():-----> eska kam ye hota hai ki ek array me koe bhi condition agar satisfied hoti to answer hame true milega hi to false milega, ye reslt true or false deta hai, 
 // esme array ki koe bhi ek value satisfied hoti hai to true de deta hai
 
-let arr14 = [10,2030,50,70,80];
+let arr14 = [10,20,30,50,70,80];
 
 let any = arr14.some(function(val){
         return val>69
@@ -907,7 +907,7 @@ console.log(any);
 
 //! every():-----> esme har ek condition ko satisfied karna hota hai aagar koe bhi ek condition nhi satisfied karta array ki value to ye false dega aur satiisfied karega to true dega
 
-let arr15 = [10,2030,50,70,80];
+let arr15 = [10,20,30,50,70,80];
 
 let all = arr15.every(function(val){
         return val>10
@@ -940,4 +940,189 @@ console.log(all);
       console.log(arr17); // it can not change
     
 */
+
+            //! OBJECTS :----->
+
+/**
+//! Example Of Array:--->
+
+// let obj = {
+//     name : "Harsh",
+//     age : 44,
+// };
+// console.log(obj.name); // yaha pe ham dot ker bad jo use karege ushi ko ye object me khojega or print karayegga
+// console.log(obj['name']);
+
+ 
+//! Ex:---->
+
+let obj1 = {
+    id :1,
+    name: "Aditya",
+    address: {
+        city : "Sultanpur",
+        pin: 227808,
+        locations: {
+            lat:23.3,
+            lng:77.4,
+        },
+    },
+}; // this is a nesting array
+console.log(obj1.address.locations.lat);  // it is a deep access
+
+
+//! Object Destructuring :---->
+
+let {lat,lng} = obj1.address.locations;  // this is a object destructuring
+console.log(lat);
+console.log(lng);
+
+//! <---- Looping In Object :--->
+
+
+//! for-in :
+let obj2 = {
+    name: "Harsh",
+    age: 26,
+    email: "test@test.com",
+}
+for(let key in obj2){
+    // console.log(key); // ye hamre object se key value ko print karayega 
+    // console.log(obj2[key]); // ye hamara key ki values ko print karayega 
+    console.log(key,":",obj2[key]);
+}
+
+// ham yaha pe aagar sirfh key likhege to key ki value ko access krr sakte hai  aur obj[key] ko liklhege to ham uski value ko bhi access krr skate hai.
+ 
+ 
+ //! Object.keys: ye sari keys ko ek array me daal deta hai 
+
+let obj3 = {
+    name: "Harsh",
+    age: 26,
+    email: "test@test.com",
+};
+console.log(Object.keys(obj3));
+
+
+ //! Object.entries: ye Array ke andar array banata hai hai
+
+ console.log(Object.entries(obj3));
+
+
+
+ //!<-------Copy Objects ----->
+
+ //! Spread:eska kam hota hai ek object ke data ko dusre array me store karna without changing there original object
+ 
+let obj4 = {
+    name: "Harsh",
+    age: 26,
+    email: "test@test.com",
+};
+console.log(obj4);
+
+let newObj4 = {...obj4};
+console.log(newObj4);
+
+
+ //! Object.assign(): eska kam hota hai original object me ek naya object ko likhna yaha add karna 
+
+ let newOBJ4 = Object.assign({price: Infinity}, obj4);
+ console.log(newOBJ4);
+ 
+
+ //! Deep Clone: 
+ // ye help karna hai nested object me se data ko copy karne me kyuki spread ke through ham original object ko copy to krr lete hai but jo object ke andar object banayaga gaya hai uske data ko nhi krr opate ghai copy kyuki vo reference dene klagta hai aagar ham object ke andar ke object ko chamge kare ge copy vale object me to ye original array bhi change krr dega.
+
+ let obj5 = {
+    name: "Harsh",
+    age: 26,
+    email: "test@test.com",
+    address:{
+        city : "SUltanpur",
+        locations: {
+            lat:23.33,
+            lng:78.8,
+        },
+    },
+};
+console.log(obj5);
+
+let newObj5 = {...obj5};
+console.log(newObj5);
+obj5.address.city = "Lko"; // eske trough ham object me change krr sdakte hai uski values me 
+console.log(newObj5);
+console.log(obj5);
+// ye ek galat tarika hai nested object ko copy kartne ka kyuki yaha pe obj ke andar jo ek obj hai uska data by reference aata hai original obj se cop object , aur jab ham copy object me change karte hai to  original object me bhi ho jata hai
+
+//! to hame yaha object Clone ki jarurat hoti hai
+ // object ke exact copy banane ke liye ham JSON ka use krege ham jisme stringify() se ham object ko String me comnvert karte hai aur pasre() Method se ham usko object me convert karte hai esse ham exact copoy mil jata hai original object ka.
+
+ let obj6 = JSON.parse(JSON.stringify(newObj5));
+ console.log(obj6);
+ obj6.address.city = "Delhi";
+ console.log(obj5);
+ console.log(obj6);
+ 
+ // copy object me changes karne pe koe change nhi ho raha hai original object me 
+
+
+
+
+
+ //! <-----  Optional Chaining ------->
+
+ let obj7 = {
+    name: "Harsh",
+    age: 26,
+    email: "test@test.com",
+    addresses:{
+        city : "SUltanpur",
+        locations: {
+            lat:23.33,
+            lng:78.8,
+        },
+    },
+};
+// !obj7.address.city = "Lko"; 
+// esse ham object mechanges krr sakte hai but aagar jaise address hai vo bad me change ho ke addresses ho jkayega to ye error batayege 
+// tab ham yaha obtional chaining karte hai ye bass d=sara key value ke last me ye ? lag jayta hai 
+
+console.log(obj7?.address?.city); // ye pahekle check karne ke liye use hota hai
+
+ // yaha par es ? ka kam hai error se bachane ka ki ha aagar addresses hai to thik nhi hai to undefine dega error nhi .
+
+
+
+ //! <---- Coumputed Properties ------>
+// eska kam hai bahar koe vakue jo assign hue ho usko ek object ke andar add karne ke liye hota hai 
+// ye Starting me ja ke add hota hai
+ let role = "admin";
+
+ let obj8 = {
+    name: "Harsh",
+    age: 26,
+    email: "test@test.com",
+    addresses:{
+        city : "SUltanpur",
+        locations: {
+            lat:23.33,
+            lng:78.8,
+        },
+    },
+    [role] : "Harsh", // ye ek tarah se syantax hai bahar ki ksihi value ko fetch karne ka 
+};
+
+console.log(obj8);
+
+*/
+
+
+
+
+
+
+
+
 

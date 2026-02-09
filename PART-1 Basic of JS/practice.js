@@ -252,6 +252,234 @@ person = {} // not allowed
 
 //! ARRAYS :-------->
 
+/**
+//!Ques:-----> Create an array with 3 fruit and print the second fruit.
+
+let fruit = ["Apple" , "Guava" ,"Banana"];
+console.log(fruit[1]);
 
 
+//!Ques:-----> Add "Mango" at the end and "Pineapple" at the starting af this array.
+let fruit1 = ["Apple" , "Guava" ,"Banana"];
+fruit1.push("Mango");
+fruit1.unshift("Pineapple");
+console.log(fruit1);
+
+
+
+
+//!Ques:-----> Replace Banana with kiwi in the array above
+//Ans:--->
+let fruit2 = ["Apple" , "Guava" ,"Banana"];
+//! 1st way
+fruit2.pop();
+fruit2.push("Kiwi");
+console.log(fruit2);
+
+//! 2nd Way
+fruit2.splice(4,5,"Kiwi");
+console.log(fruit2);
+
+
+
+
+
+// !Ques:-----> Remove last element
+let fruit3= ["Apple" , "Guava" ,"Banana"];
+fruit3.pop();
+console.log(fruit3);
+
+
+//!Ques:-----> Insert "Red" and "blue" at index 1 at this array.
+
+let arr1 = ["Green","Yellow","Bargandi","Pink"];
+arr1.splice(1,0,"Red","Blue");
+console.log(arr1);
+
+
+
+
+// !Ques:-----> Extract only the middle 3 element from this element.
+let arr2 = ["Green","Yellow","Bargandi","Pink","Lightpink"];
+let newArr1 = arr2.slice(1,4);
+console.log(newArr1);
+
+
+//! Ques:----->Sort This array alphabatically and then reverse it:
+let arr3 = ["Green","Yellow","Bargandi","Pink","Lightpink"];
+let newArr3 = arr3.sort();
+console.log(newArr3);
+
+
+// !Ques:-----> Use map() to square each number.
+
+let arr4 = [10,20,30,40,50,60];
+let newArr4 = arr4.map(function (val){
+    return val *val;
+});
+console.log(newArr4);
+
+
+
+
+// !Ques:-----> Use filter() to keep number greater than 10.
+let arr5 = [5,20,30,4,50,6];
+let newArr5 = arr5.filter(function (val){
+    if(val>10) return val;
+});
+console.log(newArr5);
+
+
+
+
+
+// !Ques:-----> Use reduce Method to find the sum of this array.
+let arr6 = [5,20,30,4,50,6];
+let newArr6 = arr6.reduce(function(accumulator,val){
+    return accumulator + val;
+},0);
+
+console.log(newArr6);
+
+
+// !Ques:-----> Use find () to get the first number less than 10
+
+let arr7 = [5,20,30,4,50,6];
+let newArr7 = arr7.find(function (val){
+    // if(val>10) return val;
+    return val>10;
+});
+console.log(newArr7);
+
+
+
+// !Ques:-----> Use some() to check if any student has scored below 35.
+
+let mark = [5,20,30,4,50,6,80];
+let newMark = mark.some(function(val){
+    return val<35;
+});
+console.log(newMark);
+
+
+
+// !Ques:-----> Use every to check if all number are even.
+
+let arr8= [8,20,30,4,50,6,80];
+let newArr8 = arr8.every(function(val){
+    return val%2 ===0;
+});
+console.log(newArr8);
+
+
+// !Ques:-----> Destruncture this array to get firstName and Lastname.
+
+let fullName = ["Harsh", "Yadav"];
+let [firstName,lastName] = fullName;
+console.log(firstName);
+console.log(lastName);
+
+
+
+
+// !Ques:----->  Merge two array using spread operator
+let a= [1,2];
+let b = [3,4];
+
+let c = [...a,...b];
+console.log(c);
+
+
+
+// !Ques:-----> Add "India" at the start of this array using spread operator
+
+let countries = ["USA","UK"];
+ countries = ["India",...countries];
+ console.log(countries);
+ 
+
+// !Ques:-----> Clone this Array properly(not by refernce)
+ let arr9 = [1,2,3,4,5,6,7,8];
+ newArr9 = [...arr9];
+ console.log(newArr9);
+ 
+*/
+
+
+//! <------- OBJECT : --------->
+
+
+// ! Create an object for a student with name age and isEnrolled.
+let obj1 = {
+    name : "Aditya",
+    age:23,
+    isEnrolled: true,
+}
+console.log(obj1);
+
+//! Can an object key be a number or boolean?
+//Yeas it can be.
+
+const obj2 ={
+    true: "Yes",
+    43: "Age",
+};
+console.log(obj2);
+
+
+// ! Acces the valueof first-name from this object
+const user ={
+    "first-name": "Harsh",
+};
+console.log(user["first-name"]);
+// console.log(user."first-name"); // this is wrong method
+
+
+
+
+
+//! Given a dynamic key let key="age", how will you acess user[key].
+
+
+let key="age";
+
+const user1 ={
+    age:26,
+};
+console.log(user1[key]);
+
+
+
+
+// ! From object below print the lattitude
+
+const locationss = {
+    city : "Sultanpur",
+    coordinates:{
+        lat: 23.2,
+        lng: 77.4,
+    },
+};
+console.log(locationss.coordinates.lat);
+
+
+
+
+// ! What will happen is coordinates is missing ?  how can you prevent errors?
+
+
+// ! Destructure the "first-name" as a variable called firstName
+
+// ! Use for-in to log all keys in this object
+
+
+
+// ! Use Object.entries() to print all key-value pairs as :
+
+
+// ! Copy this object using spread operator
+
+// ! Question
+
+// ! Deep clone objec1 safely
 
