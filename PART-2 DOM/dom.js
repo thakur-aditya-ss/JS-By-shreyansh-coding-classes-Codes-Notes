@@ -65,11 +65,91 @@ console.log("========== DOM ==========");
 
 
 //! setAttribute: element.setAttribute(name,value);
-let a = document.querySelector("a");
-a.setAttribute("href","https://www.google.com");
+// let a = document.querySelector("a");
+// a.setAttribute("href","https://www.google.com");
 
-let img = document.querySelector("img");
-img.setAttribute("src", " ")
+// let img = document.querySelector("img");
+// img.setAttribute("src","https://images.unsplash.com/photo-1770110000509-6c8298224699?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); // yaha pe ham log  setAttribute ki help se js se html me link ya value provides krr sakte hai
+
+
+//! getAttribute:----> getAttribute(name): yaha pe ham tag ke attribute ka name dalte hai aur hame uski value milti hai.
+
+
+// let a = document.querySelector("a");
+// console.log(a.getAttribute("href"));
+
+//! removeAttribute():--->
+
+// let a = document.querySelector("a");
+// a.removeAttribute("href"); // yaha pe ham tag ke attribut ko delete krr dete hai  
+
+
+//! DYNAMIC DOM MANUPULATION:
+
+// createElement:
+// append Child/prepend: jaha bhi element chahiye vaha
+// removeChild: 
+
+//! Example:
+// let h1 = document.createElement("h1")
+// h1.textContent = " Hello Create Element";
+// console.log(h1);
+
+// document.body.appendChild(h1); // ye append karne pe script tag ke bad dikhega inspect me 
+
+// document.body.prepend(h1); // ye append karne pe script tag ke pahele dikhega inspect me.
+
+//! document.createElement():
+
+// let h1 = document.createElement("h1")
+// console.log(h1);
+// h1.textContent = " Hello Sir , How Are You....";
+// document.querySelector("body").prepend(h1); // agar hame querry selector use karna hgai to hame body likhn HI Hoga.
+
+
+//!  remove element: esme ham ghtlm me koe code likhege yaha se remove() likh ke delete krr dege.
+
+// let h1 = document.querySelector("h1");
+// h1.remove(); // eska kam hai remove karna 
+
+//! line 24:
+// yaha ham 4th element jko add karege JS ke through
+ 
+// let h1 = document.createElement("h1");
+// h1.textContent = " Hello Kaiso Ho aap - 4";
+// // document.querySelector("div").append(h1); // ye Tag ko last me lane ka kam karta hai 
+// document.querySelector("div").prepend(h1); // eska kam hota hai tag ko upar lane ka ya print karane ka.
+
+//! Style Updates via . style and classList (add,remove,toggle):---->
+
+// ! line - 30:---?
+
+// let h1 = document.querySelector("h1");
+// console.dir(h1);
+// h1.style.color = "red";  // yaha se ham css apply krr sakte hai yaha 
+// h1.style.backgroundColor = "blue";
+// h1.style.fontFamily = "Gilroy";
+// h1.style.textTransform = "capitalize";
+// console.dir(h1);
+
+// ! line - 41  
+/**
+let h1 = document.querySelector("h1");
+console.dir(h1);
+
+//! remove :-
+h1.classList.remove("abcd"); // eska kam hota hai class ko hatane ka .
+
+//! add :-
+h1.classList.add("hulu"); // yaha ham classList property use karte hai jisme add() funtion use karte hai 
+
+//! toggle :- eska kam hota hai aagar koe class lagi hai to hata deta hai aur hati hue hoti hai to lagadte hai
+
+// h1.classList.toggle("hulu"); // ye jhata raha hai kyuki ham yaha same class dal rhe ghai jo hamne html me dali hai 
+
+h1.classList.toggle("abcd"); // different class pass karege to add krr dega 
+
+ */
 
 
 
